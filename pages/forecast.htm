@@ -1,0 +1,26 @@
+<h2>This is forecast, The results page.</h2>
+<small>Enjoy your local Weather!</small>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+    <h3>Here is the Forecast for {{ city }} ‒</h3>
+    <div ng-repeat="date in weatherResult.list">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ date.dt }}</h3>
+            </div>
+            <div class="panel-body">
+              The Daytime Temperature will be {{ convertToFarenheit(date.temp.day) }}, and the weather will be {{ date.weather.main }} of the "{{ date.weather.description }}" variety.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <a href="#/" class="btn btn-primary">Let's Head Back Home!</a>
+
+  </div>
+</div>
