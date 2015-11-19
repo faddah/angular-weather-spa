@@ -23,7 +23,7 @@ weatherApp.config(function($routeProvider) {
 
 weatherApp.service('cityService', function() {
   
-  this.city = ''; // || 'Portland, OR';
+  this.city = 'Portland, OR';
   
 });
 
@@ -62,6 +62,12 @@ weatherApp.controller('forecastController', ['$scope', '$log', '$resource', '$ro
   $scope.convertToCelsius = function(degK) {
     
     return Math.round(degK - 273.15);
+    
+  };
+  
+  $scope.convertToDate = function(dt) {
+    
+    return new Date(dt * 1000);
     
   };
   
