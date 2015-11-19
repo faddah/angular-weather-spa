@@ -13,7 +13,7 @@
               <h3 class="panel-title">{{ date.dt }}</h3>
             </div>
             <div class="panel-body">
-              The Daytime Temperature will be {{ convertToFarenheit(date.temp.day) }}, and the weather will be {{ date.weather.main }} of the "{{ date.weather.description }}" variety.
+              The Daytime Temperature will be {{ convertToFarenheit(date.temp.day) }}℉, or {{ convertToCelsius(date.temp.day) }}℃, and the weather will be {{ date.weather[0].main }} of the "{{ date.weather[0].description }}" variety.
             </div>
           </div>
         </div>
