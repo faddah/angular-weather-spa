@@ -3,7 +3,7 @@
 
 This is an [Angular.js](https://angularjs.org/) framework SPA taken from [Anthony Alicea's](http://www.anthonypalicea.com) course on [Angular at Udemy](https://www.udemy.com/learn-angularjs/learn/#/). It pulls a weather data object returned in JSON from [Open Weather Map](http://openweathermap.org/).
 
-I have made a number of modification to it, using Bootstrap classes and the Angular ngClass directive.
+I have made a number of modification to it, using Bootstrap classes and the [Angular ngClass directive](https://docs.angularjs.org/api/ng/directive/ngClass).
 
 * I have added in a function in the controllers.js, accessed in the weatherReport.htm directive template that computes the temperature in both ℉ (Farenheit) and ℃ (Celsius).
 * I also pull the weather objects main & description in weatherReport.htm from the returned weather object and put those in each of the results.
