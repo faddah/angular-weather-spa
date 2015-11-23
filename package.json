@@ -1,0 +1,35 @@
+{
+  "name": "angularweatherapp",
+  "version": "0.9.0",
+  "description": "Weather App SPA in AngularJS from Udemy course on Angular by Anthony Alicea (https://www.udemy.com/learn-angularjs/learn/#/), with changes by Faddah Wolf",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faddah/angular-weather-spa.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "javascript",
+    "js",
+    "weather",
+    "openweathermap",
+    "openweathermap.org",
+    "single",
+    "page",
+    "application",
+    "spa",
+    "web",
+    "app",
+    "application"
+  ],
+  "author": "Anthony Alicea with additions by Faddah Wolf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faddah/angular-weather-spa/issues"
+  },
+  "homepage": "https://github.com/faddah/angular-weather-spa#readme"
+}
