@@ -1,21 +1,24 @@
-<h2>This is forecast, The results page.</h2>
+<h2>This is Forecast Results page.</h2>
 <small>Enjoy your local Weather!</small>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-  
+
     <h3>Here is the Forecast for {{ city }} ‒</h3>
-    <div ng-repeat="date in weatherResult.list">
+    <hr />
+    <div>
+      <div class="btn-group" role="group">
+        <a href="#/forecast/1" class="btn" ng-class="{'btn-disabled': days === '1', 'btn-primary': days !== '1'}">1 Day Forecast</a><a href="#/forecast/2" class="btn" ng-class="{'btn-disabled': days === '2', 'btn-primary': days !== '2'}">2 Day Forecast</a><a href="#/forecast/3" class="btn" ng-class="{'btn-disabled': days === '3', 'btn-primary': days !== '3'}">3 Day Forecast</a>
+      </div>
+      <div class="btn-group" role="group">
+        <a href="#/forecast/5" class="btn" ng-class="{'btn-disabled': days === '5', 'btn-primary': days !== '5'}">5 Day Forecast</a><a href="#/forecast/7" class="btn" ng-class="{'btn-disabled': days === '7', 'btn-primary': days !== '7'}">7 Day Forecast</a><a href="#/forecast/10" class="btn" ng-class="{'btn-disabled': days === '10', 'btn-primary': days !== '10'}">10 Day Forecast</a>
+      </div>
+    </div>
+    <hr />
+    <div ng-repeat="w in weatherResult.list">
       <div class="row">
         <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{ convertToDate(date.dt) | date: 'EEEE, dd MMMM yyyy, hh:mm a Z' }}</h3>
-            </div>
-            <div class="panel-body">
-              The Daytime Temperature will be {{ convertToFarenheit(date.temp.day) }}℉, or {{ convertToCelsius(date.temp.day) }}℃, and the weather will be {{ date.weather[0].main }} of the "{{ date.weather[0].description }}" variety.
-            </div>
-          </div>
+          <weather-report weather-day="w" convert-to-standard-one="convertToFarenheit(daytimeTemp)" convert-to-standard-two="convertToCelsius(daytimeTemp)" convert-to-date="convertToDate(theDate)" date-format="EEEE, dd MMMM yyyy, hh:mm a Z"></weather-report>
         </div>
       </div>
     </div>
