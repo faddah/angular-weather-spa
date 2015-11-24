@@ -1,6 +1,6 @@
 // CONTROLLERS
 
-weatherApp.controller('homeController', ['$scope', '$log', '$routeParams', '$window', 'cityService', function($scope, $log, $routeParams, $window, cityService) {
+weatherApp.controller('homeController', ['$scope', '$log', '$routeParams', '$location', 'cityService', function($scope, $log, $routeParams, $location, cityService) {
 
   $scope.city = cityService.city;
 
@@ -8,25 +8,29 @@ weatherApp.controller('homeController', ['$scope', '$log', '$routeParams', '$win
     cityService.city = $scope.city;
   });
 
+/* * * Former method to go to forecast.htm template from home.htm after submitting city. now being handled by $scope.submit() function,
+need to add $window service to controller injected dependencies if you use this, otherwise use $location with $scope.submit instead.
   $scope.goToForecast = function() {
     // $location.path('#/forecast');
     // $location.replace();
     $window.location.href = '#/forecast';
   };
 
+  * * * * * * * * * */
+
+  $scope.submit = function() {
+    $location.path("/forecast");
+  };
+
 }]);
 
-weatherApp.controller('forecastController', ['$scope', '$log', '$resource', '$routeParams', 'cityService', function($scope, $log, $resource, $routeParams, cityService) {
+weatherApp.controller('forecastController', ['$scope', '$log', '$routeParams', 'cityService', 'weatherService', function($scope, $log, $routeParams, cityService, weatherService) {
 
   $scope.city = cityService.city;
 
   $scope.days = $routeParams.days || '1';
 
-  $scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", { callback: "JSON_CALLBACK" }, { get: { method: "JSONP" } } );
-
-  $scope.weatherAPI.appid = 'f857b7ab2bf18470438f14cd1da0781f';
-
-  $scope.weatherResult = $scope.weatherAPI.get({ appid: $scope.weatherAPI.appid, q: $scope.city, cnt: $scope.days });
+  $scope.weatherResult = weatherService.GetWeather($scope.city, $scope.days);
 
   // $log.info($scope.weatherResult);
 

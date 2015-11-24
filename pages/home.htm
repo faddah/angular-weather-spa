@@ -4,10 +4,26 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h4>Forecast By City</h4>
-    <div class="form-group">
-      <!-- <input type="text" class="form-control" placeholder="Input City Name Only Here." ng-model="city" /> -->
-      <input type="text" class="form-control" ng-model="city" ng-keyup="$event.keyCode == 13 && goToForecast()" />
-    </div>
-    <a href="#/forecast" class="btn btn-primary">Get the Forecast!</a>
+    <form ng-submit="submit()">
+      <div class="form-group">
+        <!-- <input type="text" class="form-control" placeholder="Input City Name Only Here." ng-model="city" /> -->
+        <input type="text" class="form-control" ng-model="city" />
+      </div>
+      <input type="submit" class="btn btn-primary" value="Get the Forecast!" />
+    </form>
   </div>
 </div>
+
+<!--
+formerly handled the return-key press this way, before instruction on from video on using ngSubmit/ng-submit itself,
+put ng-keyup in input field and "Get the Forecast!" submit was actually just the link looking like a button with
+bootstrap css classes. the $scope.goToForecast function in controllers.js for the homeController used angular
+$window.location.href to go to #/forecast in the controller. —
+
+<div class="form-group">
+  <input type="text" class="form-control" ng-model="city" ng-keyup="$event.keyCode == 13 && goToForecast()" />
+</div>
+</form>
+<a href="#/forecast" class="btn btn-primary">Get the Forecast!</a>
+
+-->
