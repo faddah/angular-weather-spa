@@ -1,6 +1,6 @@
 {
 	"name": "angularweatherapp",
-	"version": "0.9.5",
+	"version": "0.9.6",
 	"description": "Weather App SPA in AngularJS from Udemy course on Angular by Anthony Alicea (https://www.udemy.com/learn-angularjs/learn/#/), with changes by Faddah Wolf",
 	"keywords": [
 		"angular",
